@@ -17,4 +17,8 @@ public class Lotto {
     }
 
     // TODO: 추가 기능 구현
+    public int generatedLottoNums(long price) {
+        if (price % 1000 != 0) throw new IllegalArgumentException();
+        return (int) price / 1000;
+    }
 }
