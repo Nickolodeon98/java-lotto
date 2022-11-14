@@ -29,8 +29,13 @@ class LottoTest {
     @DisplayName("주어진 금액에 맞는 로또 개수를 찾는다.")
     @Test
     void howManyLotto() {
-        Assertions.assertEquals(16, new Lotto(List.of(1, 2, 3, 4, 5, 5)).generatedLottoNums(16000));
+        Assertions.assertEquals(16, new Lotto(List.of(1, 2, 3, 4, 5, 6)).generatedLottoNums(16000));
     }
 
-
+    @DisplayName("무작위의 중복 없는 6개의 숫자를 포함하는 리스트를 생성한다.")
+    @Test
+    void generateLotto() {
+        List<Integer> sixNumbers = new Lotto(List.of(1, 2, 3, 4, 5, 6)).lottoGenerator();
+        Assertions.assertEquals(sixNumbers.stream().distinct().count(), sixNumbers.size());
+    }
 }
