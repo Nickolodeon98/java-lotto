@@ -22,5 +22,14 @@ public class Lotto {
         }
     }
 
+    @Override
+    public String toString() {
+        return "numbers=" + numbers;
+    }
     // TODO: 추가 기능 구현
+
+    public List<Integer> getNumbers() {
+        return numbers;
+    }
+
 }
