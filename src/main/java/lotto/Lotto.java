@@ -17,21 +17,10 @@ public class Lotto {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException();
         }
+        if (numbers.stream().distinct().count() != numbers.size()) { // 중복인 숫자가 있는 경우의 예외 처리
+            throw new IllegalArgumentException(); // 또 검사한다.
+        }
     }
 
     // TODO: 추가 기능 구현
-    public int generatedLottoNums(long price) {
-        if (price % 1000 != 0) throw new IllegalArgumentException();
-        return (int) price / 1000;
-    }
-
-    public List<Integer> lottoGenerator() {
-        List<Integer> singleLotto = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            int rndNumber = Randoms.pickNumberInRange(1, 45);
-            if (!singleLotto.contains(rndNumber)) singleLotto.add(rndNumber); // 중복 검사는 입력에 대해서도 동일하게 진행된다.
-        }
-        return singleLotto;
-    }
-
 }
