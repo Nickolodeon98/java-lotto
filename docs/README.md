@@ -14,8 +14,12 @@
 
 ``무작위 숫자 6개로 구성된 로또들을 생성한다.``
 
-### 4. boolean isEarnOrLoss()
+### 4. int isEarnOrLoss(List<Integer> winningNumbers, long price)
+### 변경: 4. int rankedWhereAbouts(List<Integer> winningNumbers)
+``몇 등이 당첨되었는지를 검사한다. 등수를 리턴한다.``
 
-``로또 당첨 여부를 확인한다.``
+[//]: # (클래스로 빼야 하는지 여부를 생각해본다.)
 
-### 4. 
+### 5. int howManyDuplicates(List<Integer> numbers, Lotto lotto)
+
+``정수 리스트와 로또 객체 둘 사이에 몇 개의 숫자가 겹치는지 확인한다.``
