@@ -26,14 +26,29 @@ public class LottoHierarchy {
         return numbers.size();
     }
 
-//    /* 겹치는 것을 검사하는 메서드에 everyLottoGenerator 과 winningNumbers 를 태운다. */
-//    public int rankedWhereAbouts(List<Integer> winningNumbers) {
-//        for (Lotto lotto : printedLotto) {
-//
-//            winningNumbers.retainAll()
-//        }
-//
-//    }
+    public Ranks mapDuplicatesToRanks(int duplicatesCount, boolean isBonus) {
+        if (duplicatesCount == 3) return Ranks.FIFTH_PLACE;
+        if (duplicatesCount == 4) return Ranks.FOURTH_PLACE;
+        if (duplicatesCount == 5) {
+            if (isBonus) return Ranks.SECOND_PLACE;
+            return Ranks.THIRD_PLACE;
+        }
+        if (duplicatesCount == 6) return Ranks.FIFTH_PLACE;
+        return Ranks.NONE;
+    }
+
+    /* 겹치는 것을 검사하는 메서드에 everyLottoGenerator 과 winningNumbers 를 태운다. */
+    public Ranks rankedWhereAbouts(List<Integer> winningNumbers, int bonus) {
+        Ranks ranking = null;
+        boolean isBonus = false;
+        int duplicates = 0;
+        for (Lotto lotto : printedLotto) {
+            duplicates = howManyDuplicates(winningNumbers, lotto);
+            isBonus = lotto.getNumbers().contains(bonus);
+            ranking = mapDuplicatesToRanks(duplicates, isBonus);
+        }
+        return ranking;
+    }
 
     public int generatedLottoNums(long price) {
         if (price % 1000 != 0) throw new IllegalArgumentException();

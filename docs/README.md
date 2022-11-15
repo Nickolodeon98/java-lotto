@@ -23,3 +23,7 @@
 ### 5. int howManyDuplicates(List<Integer> numbers, Lotto lotto)
 
 ``정수 리스트와 로또 객체 둘 사이에 몇 개의 숫자가 겹치는지 확인한다.``
+
+### 6. Ranks mapDuplicatesToRanks(int duplicatesCount, boolean isBonus)
+
+``주어진 매개변수를 토대로 중복되는 숫자의 개수와 당첨 단계를 매핑해준다.``
