@@ -1,4 +1,4 @@
-package lotto;
+package lotto.domain;
 
 public enum Ranks {
     /* 변하지 않는 값을 Enum 을 적용해 표현할 수 있다. */

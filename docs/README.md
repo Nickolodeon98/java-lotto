@@ -32,7 +32,7 @@
 
 [//]: # (클래스로 빼야 하는지 여부를 생각해본다.)
 
-### 7. int[] countEachRanks()
+### 7. int[] countEachRanks(List<Ranks> rankings)
 
 ``각 등수가 몇 개씩 있는지를 배열에 담아 리턴한다.``
 

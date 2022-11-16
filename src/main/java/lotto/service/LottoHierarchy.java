@@ -1,6 +1,9 @@
-package lotto;
+package lotto.service;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import lotto.controller.Error;
+import lotto.domain.Ranks;
+import lotto.domain.Lotto;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -90,14 +93,16 @@ public class LottoHierarchy {
     }
 
     public int generatedLottoNums(long price) {
-        if (price % 1000 != 0) throw new IllegalArgumentException();
+        if (price % 1000 != 0) {
+            System.out.println("[ERROR] " + Error.VALUE_ERROR.getValue());
+            throw new IllegalArgumentException();
+        }
         return (int) price / 1000;
     }
 
     public Lotto lottoGenerator() {
         List<Integer> sixNumbers = new ArrayList<>();
         sixNumbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
-        Collections.sort(sixNumbers);
         return new Lotto(sixNumbers);
     }
 
