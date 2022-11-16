@@ -65,7 +65,6 @@ public class LottoHierarchy {
         return Ranks.values()[duplicatesCount-2];
     }
 
-    /* 겹치는 것을 검사하는 메서드에 everyLottoGenerator 과 winningNumbers 를 태운다. */
     public List<Ranks> rankedWhereAbouts(List<Integer> winningNumbers, int bonus) {
         List<Ranks> statistics = new ArrayList<>();
         Ranks ranking = null;
@@ -80,6 +79,14 @@ public class LottoHierarchy {
 
         }
         return statistics;
+    }
+
+    public int[] countEachRanks(List<Ranks> rankings) {
+        int[] totalRanks = new int[6];
+        for (Ranks ranking : rankings) {
+            totalRanks[ranking.ordinal()]++;
+        }
+        return totalRanks;
     }
 
     public int generatedLottoNums(long price) {
