@@ -23,7 +23,4 @@ public class UserInterface {
         userResponse.registerBonus(bonus);
         userResponse.printStatistics();
     }
-
-
-
 }

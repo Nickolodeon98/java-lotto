@@ -7,7 +7,9 @@ import lotto.domain.Lotto;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /* 당첨 등수를 찾는 것에 관련된 클래스 */
 public class LottoHierarchy {
@@ -103,6 +105,7 @@ public class LottoHierarchy {
     public Lotto lottoGenerator() {
         List<Integer> sixNumbers = new ArrayList<>();
         sixNumbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
+        sixNumbers = sixNumbers.stream().sorted().collect(Collectors.toList());
         return new Lotto(sixNumbers);
     }
 

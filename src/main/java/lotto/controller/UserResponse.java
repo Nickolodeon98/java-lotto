@@ -6,6 +6,7 @@ import lotto.domain.Ranks;
 import lotto.domain.UserLotto;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class UserResponse {
 
@@ -19,7 +20,7 @@ public class UserResponse {
     }
 
     public void printNumbersAndLotto(String price) {
-        if (!price.matches("[0-9]*")) printErrorMessage(Error.FORMAT_ERROR);
+        if (!price.matches("[0-9]*")) printSpecialErrorMessage(Error.FORMAT_ERROR);
         this.lottoHierarchy = new LottoHierarchy(Long.parseLong(price));
         System.out.printf("%d개를 구매했습니다.\n", lottoHierarchy.getCounter());
         List<Lotto> everyLotto = lottoHierarchy.getPrintedLotto();
@@ -55,5 +56,10 @@ public class UserResponse {
     public void printErrorMessage(Error error) {
         System.out.println("[ERROR] " + error.getValue());
         throw new IllegalArgumentException();
+    }
+
+    public void printSpecialErrorMessage(Error error) {
+        System.out.println("[ERROR] " + error.getValue());
+        throw new NoSuchElementException();
     }
 }
