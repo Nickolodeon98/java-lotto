@@ -40,8 +40,16 @@ public class LottoHierarchy {
         this.printedLotto = everyLottoGenerator(this.counter); // List<Lotto> 타입의 변수이다.
     }
 
+    public int getCounter() {
+        return counter;
+    }
+
     public void setCounter(int counter) {
         this.counter = counter;
+    }
+
+    public List<Lotto> getPrintedLotto() {
+        return printedLotto;
     }
 
     public int howManyDuplicates(List<Integer> numbers, Lotto lotto) {
@@ -113,4 +121,6 @@ public class LottoHierarchy {
             System.out.println(lotto.toString());
         }
     }
+
+
 }
