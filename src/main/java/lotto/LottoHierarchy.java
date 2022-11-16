@@ -33,7 +33,7 @@ public class LottoHierarchy {
             if (isBonus) return Ranks.SECOND_PLACE;
             return Ranks.THIRD_PLACE;
         }
-        if (duplicatesCount == 6) return Ranks.FIFTH_PLACE;
+        if (duplicatesCount == 6) return Ranks.FIRST_PLACE;
         return Ranks.NONE;
     }
 
