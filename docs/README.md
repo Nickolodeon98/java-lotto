@@ -39,7 +39,7 @@
 
 # B. 입력 파트
 
-## ui.UserInterface 클래스에서 구현한다.
+## ui.UserInterface 클래스에서 구현한다. UserResponse 클래스를 DI 받는다.
 
 ### 1. 구입금액을 입력받는다.
 
@@ -47,3 +47,10 @@
 
 ### 3. 보너스 번호를 입력받는다.
 
+# C. 출력 파트
+
+## ui.UserResponse 클래스에서 구현한다. LottoHierarchy 클래스를 DI 받는다.
+
+### 1. 구매 개수를 출력한다.
+
+### 2. 당첨 통계를 출력한다.
