@@ -96,9 +96,10 @@ class LottoTest {
         return lottoHierarchy.rankedWhereAbouts(winningNumbers, 7);
     }
 
-    @DisplayName("얼마를 벌었는지 정확히 금액을 반환한다.")
+    @DisplayName("얼마를 벌었는지 정확히 금액을 토대로 수익률을 반환한다.")
     @Test
     void earnHowMuch() {
-        Assertions.assertEquals(5000L, lottoHierarchy.earnings(getRankings()));
+        lottoHierarchy.setCounter(8);
+        Assertions.assertEquals(62.5f, lottoHierarchy.earnings(getRankings()));
     }
 }

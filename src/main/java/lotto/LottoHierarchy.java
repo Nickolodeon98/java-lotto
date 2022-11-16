@@ -40,6 +40,10 @@ public class LottoHierarchy {
         this.printedLotto = everyLottoGenerator(this.counter); // List<Lotto> 타입의 변수이다.
     }
 
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
     public int howManyDuplicates(List<Integer> numbers, Lotto lotto) {
         List<Integer> tmpNumbers = new ArrayList<>(numbers);
         tmpNumbers.retainAll(lotto.getNumbers());
@@ -77,10 +81,7 @@ public class LottoHierarchy {
 
     public Lotto lottoGenerator() {
         List<Integer> sixNumbers = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            int rndNumber = Randoms.pickNumberInRange(1, 45);
-            sixNumbers.add(rndNumber); // 중복 검사는 입력에 대해서도 동일하게 진행된다.
-        }
+        sixNumbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
         Collections.sort(sixNumbers);
         return new Lotto(sixNumbers);
     }
@@ -99,12 +100,12 @@ public class LottoHierarchy {
         return everyLottoGenerator(repetition);
     }
 
-    public Long earnings(List<Ranks> rankings) {
+    public float earnings(List<Ranks> rankings) {
         Long profit = 0L;
         for (Ranks ranking : rankings) {
             profit += ranking.getValue();
         }
-        return profit;
+        return (float) profit / (counter * 1000) * 100;
     }
 
     public void printLotto() {
