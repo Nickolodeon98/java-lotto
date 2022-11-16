@@ -33,10 +33,8 @@
 
 ## 수익률을 계산하는 메서드들
 
-### 7. int earnings(List<Ranks> rankings)
+### 7. float earnings(List<Ranks> rankings)
 
-``얼마를 벌었는지 계산한다.``
+``얼마를 벌었는지 계산한다. 번 돈을 토대로 수익률을 계산해서 소수 형태로 리턴한다.``
 
-### 8. String profitPercentage(int earnings)
 
-``번 돈을 토대로 수익률을 계산해서 문자열 형태로 리턴한다.``
