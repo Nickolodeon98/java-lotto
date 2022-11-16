@@ -27,13 +27,18 @@
 ``주어진 매개변수를 토대로 중복되는 숫자의 개수와 당첨 단계를 매핑해준다.``
 
 ### 변경: 6. List<Ranks> rankedWhereAbouts(List<Integer> winningNumbers, int bonus)
+
 ``몇 등이 당첨되었는지를 검사한다. 등수 목록을 리스트로 리턴한다.``
 
 [//]: # (클래스로 빼야 하는지 여부를 생각해본다.)
 
-## 수익률을 계산하는 메서드들
+### 7. int[] countEachRanks()
 
-### 7. float earnings(List<Ranks> rankings)
+``각 등수가 몇 개씩 있는지를 배열에 담아 리턴한다.``
+
+## 수익률을 계산하는 메서드
+
+### 8. float earnings(List<Ranks> rankings)
 
 ``얼마를 벌었는지 계산한다. 번 돈을 토대로 수익률을 계산해서 소수 형태로 리턴한다.``
 
