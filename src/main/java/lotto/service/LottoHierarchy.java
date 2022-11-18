@@ -89,9 +89,14 @@ public class LottoHierarchy {
     public int[] countEachRanks(List<Ranks> rankings) {
         int[] totalRanks = new int[6];
         for (Ranks ranking : rankings) {
-            totalRanks[ranking.ordinal()]++;
+            totalRanks[ranking.ordinal()]++; //list.get(2) == 1 [1,2,3,4,5,6]
         }
         return totalRanks;
+        // rankings = [NONE, FIRST_PLACE, SECOND_PLACE, NONE]
+        // totalRanks = {1,0,0,0,0,0}
+        // totalRanks = {1,0,0,0,1,0}
+        // totalRanks = {1,0,0,0,1,1}
+        // totalRanks = {2,0,0,0,1,1}
     }
 
     public int generatedLottoNums(long price) {
